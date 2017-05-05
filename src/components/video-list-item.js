@@ -4,8 +4,8 @@ const VideoListItem = ({ video, onVideoSelect }) => {    // identical to ES5 (pr
     const imageUrl = video.snippet.thumbnails.default.url;
     const title = video.snippet.title;
 
+    // below we use the function as a click lister in order to execute in only on click on the <ul>
     return (
-        <!-- below we use the function as a click lister in order to execute in only on click on the <ul> -->
         <ul onClick={() => onVideoSelect(video)} className="list-group-item">
             <div className="video-list media">
                 <div className="media-left">

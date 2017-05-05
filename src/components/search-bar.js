@@ -12,7 +12,7 @@ export default class SearchBar extends Component {
         // to control the visual component (the input tag) only with the manipulation
         // with the data
         return (
-            <div>
+            <div className="search-bar">
                 <input
                     value={this.state.term}
                     onChange={ event => this.setState({ term: event.target.value }) }
