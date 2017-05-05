@@ -7,6 +7,11 @@ export default class SearchBar extends Component {
         this.state = { term: '' };
     }
 
+    onInputChange(term) {
+        this.setState({ term });
+        this.props.onSearchTermChanged(term);
+    }
+
     render() {
         // this trick with the state (value={...}) gives us the opportunity
         // to control the visual component (the input tag) only with the manipulation
@@ -15,7 +20,7 @@ export default class SearchBar extends Component {
             <div className="search-bar">
                 <input
                     value={this.state.term}
-                    onChange={ event => this.setState({ term: event.target.value }) }
+                    onChange={ event => this.onInputChange(event.target.value) }
                 />
             </div>
         );
